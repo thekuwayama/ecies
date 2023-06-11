@@ -30,7 +30,7 @@ func Encrypt(pubkey *PublicKey, msg []byte) ([]byte, error) {
 	plaintext := pkcs7Pad(msg, block.BlockSize())
 
 	// IV is zeros
-	// https://github.com/bcgit/bc-java/blob/738dfc0132323d66ad27e7ec366666ed3e0638ab/cor[…]src/main/java/org/bouncycastle/crypto/modes/CBCBlockCipher.java
+	// https://github.com/bcgit/bc-java/blob/738dfc0132323d66ad27e7ec366666ed3e0638ab/core/src/main/java/org/bouncycastle/crypto/modes/CBCBlockCipher.java#L51
 	// If an IV isn't passed as part of the parameter, the IV will be all zeros.
 	iv := make([]byte, 16)
 	// zeroPad(iv, 16)

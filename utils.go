@@ -8,6 +8,7 @@ import (
 	"golang.org/x/crypto/hkdf"
 )
 
+// KDF to use SHA256 digest
 func kdf(secret []byte) (key []byte, err error) {
 	key = make([]byte, 32)
 	kdf := hkdf.New(sha256.New, secret, nil, nil)
